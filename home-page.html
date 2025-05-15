@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildlife Philippines</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="/styles/home-page-style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <div class="Headerlogo">
+        <img src="/home-page-images/Slides/logo.png" alt="Logo">
+      </div>
+      <h1>WILDLIFE PHILIPPINES</h1>
+    </div>
+    <nav>
+      <a href="home-page.html">Home</a>
+      <a href="wildlife-classifications/wildlife-classifications.html">Wildlife Classifications</a>
+      <a href="feedback/feedback.html">Feedback</a>
+      <a href="about-us/about-us.html">About Us</a>
+    </nav>
+  </header>
+<div class="slider">
+  <div class="slide active" style="background-image: url('/home-page-images/Slides/slide1.jpg');">
+    <div class="slide-content">
+      <h1>Celebrate Philippine Wildlife 🌏🦅</h1>
+      <p>Discover the incredible animals of the Philippines! From the majestic Philippine eagle to the elusive tarsier, explore the beauty of our diverse wildlife.</p>
+      <button class="explore" onclick="location.href='wildlife.html'">Explore The Site</button>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url('/home-page-images/Slides/slide2.jpg');">
+    <div class="slide-content">
+      <h1>Protect & Conserve 🛡️🐅</h1>
+      <p> Every species matters. Every action counts. Learn about endangered animals and how you can help save them through conservation efforts.</p>
+      <button class="explore" onclick="location.href='wildlife.html'">Explore The Site</button>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url('/home-page-images/Slides/slide3.png');">
+    <div class="slide-content">
+      <h1>Connect & Take Action 💚🏞️</h1>
+      <p> Know the NGOs, wildlife sanctuaries, and conservation groups. that helps protect and conserve this beautiful animals.</p>
+      <button class="explore" onclick="location.href='wildlife.html'">Explore The Site</button>
+    </div>
+  </div>
+  <div class="dots">
+    <span class="dot active" onclick="setSlide(0)"></span>
+    <span class="dot" onclick="setSlide(1)"></span>
+    <span class="dot" onclick="setSlide(2)"></span>
+  </div>
+</div>
+
+<section class="stats">
+  <h2>📊 Why Wildlife Conservation Matters</h2>
+  <div class="stats-container">
+    <canvas id="pieChart" class="pie-chart"></canvas>
+    <div class="stats-cards">
+      <h3 class="cards-title">How much do we really care about the wildlife of the Philippines</h3>
+     <div class="card small-card">
+     <img src="/home-page-images/Stats/icon (3).png" alt="Species Icon" class="statscard-img">
+     <h3>52,177 Species</h3>
+    <p>Philippines is home to around 52,177 species, half of which is endemic to the Philippines archipelago</p>
+    </div>
+
+  <div class="card big-card">
+   <img src="/home-page-images/Stats/icon (2).png" alt="Endangered Icon" class="statscard-img">
+     <h3>About 2000 are critically endangered</h3>
+      <p>"We have over 52,000 species, about half of which are not found anywhere else in the world. Sadly, around 2,000 are either critically endangered or threatened or vulnerable," Lyazaga</p>
+    </div>
+
+    <div class="card small-card">
+   <img src="/home-page-images/Stats/icon (1).png" alt="Budget Icon" class="statscard-img">
+   <h3>DENR 0.46% Budget</h3>
+   <p>Based on the 2023 Philippines national budget of Php 5.28 trillion, DENR the agency that supposes to protect nature only gets P24.08 billion</p>
+    </div>
+
+    </div>
+  </div>
+  <p>Wildlife is essential to the Philippines' rich biodiversity, contributing to healthy ecosystems, natural resources, and cultural heritage. With thousands of unique species, the country is a global hotspot for biodiversity, yet many animals face the threat of extinction due to habitat loss, climate change, and human activities. Conservation is critical not only to protect these species but also to maintain ecological balance, ensuring clean air, water, and sustainable resources for future generations. However, limited funding and awareness hinder efforts to safeguard wildlife. By prioritizing conservation, supporting environmental policies, and spreading awareness, we can help preserve the natural world and the vital benefits it provides to both people and the planet.</p>
+</section>
+
+<section class="favorite-animals">
+  <div class="carousel">
+    <h2>Team’s Favorite Animals</h2>
+    <div class="carousel-content">
+      <button class="nav left" onclick="changeSlide(-1)">&#10094;</button>
+    
+      <div class="animal-display">
+        <div class="slidefav-wrapper" id="slidefav-wrapper"></div>
+      </div>
+    
+      <button class="nav right" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="thumbnails-wrapper" id="thumbnails"></div>
+  </div>
+</section>
+
+
+<section class="stories-section">
+  <h2>Wildlife Rescue Stories 🐾</h2>
+  <p>Discover inspiring stories of rescued and rehabilitated animals across the Philippines.</p>
+
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <div class="arrow" onclick="prevCard()">&#10094;</div>
+
+    <div class="carouselhead">
+      <div class="storycard side">
+        <img src="/home-page-images/rescue stories/card (1).jpg" alt="Story 1">
+        <div class="summary">
+          <h3>Philippine Eagle Reintroduction: Giving the King of Birds a Second Chance</h3>
+          <p>The Philippine Eagle Foundation continues its mission to restore the endangered Philippine eagle population in Leyte. In the second year of the Philippine Eagle Reintroduction Program, three eagles—Lakpue, Lyra Sinabadan, and Kalatungan I—have been transported to Mahagnao, Leyte for acclimation before their release. Using improved soft-release techniques, conservationists aim to prevent past setbacks and ensure the survival of these majestic raptors. This program is a crucial step in reviving the Leyte eagle population, which was nearly wiped out by Typhoon Yolanda. Support conservation efforts and help protect the King of Birds! 🦅</p>
+          <button>Readmore →</button>
+        </div>
+      </div>
+
+      <div class="storycard center">
+        <img src="/home-page-images/rescue stories/card (2).jpg" alt="Story 2">
+        <div class="summary">
+          <h3>Endangered Philippine Deer Rescued and Released in Leyte</h3>
+          <p>A Philippine deer, locally known as "bugsok", was rescued in Kananga, Leyte after suffering wounds from illegal hunting traps and dog bites. The Energy Development Corporation (EDC) Biodiversity Team, along with local authorities, treated the deer at the Ormoc City Wildlife Rescue Center before releasing it back into the Tongonan Geothermal Reservation. As an endangered species, the Philippine deer faces threats from habitat loss and poaching, highlighting the urgent need for stronger conservation efforts.</p>
+          <button>Readmore →</button>
+        </div>
+      </div>
+
+      <div class="storycard side">
+        <img src="/home-page-images/rescue stories/card (3).jpg" alt="Story 3">
+        <div class="summary">
+          <h3>Wounded Philippine Eagle-Owl Rescued in Bukidnon</h3>
+          <p>A Philippine eagle-owl, an endemic and critically endangered species, was rescued in San Fernando, Bukidnon by forest guards from the Philippine Eagle Center (PEC). Found with multiple injuries, the owl was brought to Central Mindanao University’s veterinary clinic for treatment and is now recovering in Davao City. Experts emphasize that the presence of these owls signals a healthy ecosystem, highlighting the need for stronger protection against illegal hunting and deforestation.</p>
+          <button>Readmore →</button>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="arrow" onclick="nextCard()">&#10095;</div>
+  </div>
+</section>
+
+<footer class="footer_container">
+  <div class="footer_content">
+
+    <!-- Left Logo and info -->
+    <div class="footer_section">
+      <div class="footer_logo">
+        <img src="/home-page-images/Slides/logo.png" alt="Wildlife Logo">
+        <span>WILDLIFE PHILIPPINES</span>
+      </div>
+      <p style="margin-top: 1rem;">&copy; 2025 Wildlife Philippines<br>All rights reserved.</p>
+      <div class="footer_socials">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-dribbble"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+   <!-- Center Quick Links -->
+<div class="footer_section footer_links">
+  <ul>
+    <li><a href="#" class="footer_link active">Home</a></li>
+    <li><a href="#" class="footer_link">Wildlife Classifications</a></li>
+    <li><a href="#" class="footer_link">Feedback</a></li>
+    <li><a href="#" class="footer_link">About Us</a></li>
+  </ul>
+</div>
+
+
+    <!-- Right Stay up to date -->
+    <div class="footer_section footer_updates">
+      <h3>Stay up to date</h3>
+      <div class="footer_email_wrapper">
+        <i class="fas fa-paper-plane"></i>
+        <input type="email" placeholder="Enter your email address" class="footer_email_input">
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+
+<script>
+// Top slider
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide() {
+  slides.forEach((s, i) => s.classList.toggle('active', i === slideIndex));
+  dots.forEach((dot) => dot.classList.remove('active'));
+  dots[slideIndex].classList.add('active'); // Fix: use slideIndex instead of index
+}
+
+setInterval(() => {
+  slideIndex = (slideIndex + 1) % slides.length;
+  showSlide();
+}, 4000);
+
+
+// favorite team
+const animals = [
+    {
+      name: "The Philippine eagle",
+      image: "/home-page-images/favorite animals/eagle.png",
+      description: "A rare, powerful bird found only in the Philippines. With a massive wingspan and distinct crest, it is one of the world's largest eagles. Deforestation and hunting threaten its survival."
+    },
+    {
+      name: "The Philippine tarsier",
+      image: "/home-page-images/favorite animals/tarsier.png",
+      description: "A tiny, nocturnal primate with huge eyes and strong jumping abilities. Found in Philippine forests, it clings to trees and feeds on insects. Habitat loss and human disturbance threaten its survival."
+    },
+    {
+      name: "The Visayan spotted deer",
+      image: "/home-page-images/favorite animals/deer.png",
+      description: "A rare species native to the Visayan Islands. Known for its spotted coat and small stature, it's one of the most endangered deer species in the world."
+    },
+    {
+      name: "The Luzon bleeding-heart",
+      image: "/home-page-images/favorite animals/pigeon.png",
+      description: "A species of ground dove native to Luzon island. It gets its name from a red spot on its chest that resembles a bleeding wound."
+    },
+    {
+      name: "The Philippine duck",
+      image: "/home-page-images/favorite animals/duck.png",
+      description: "An endemic species of dabbling duck. Known for its distinctive dark crown and rusty-brown body, it thrives in freshwater wetlands."
+    }
+  ];
+
+  let currentIndex = 0;
+
+  function createSlides() {
+    const wrapper = document.getElementById("slidefav-wrapper");
+    wrapper.innerHTML = "";
+
+    animals.forEach((animal, index) => {
+      const slide = document.createElement("div");
+      slide.classList.add("slidefav");
+      if (index === currentIndex) slide.classList.add("active");
+
+      slide.innerHTML = `
+        <div class="animal-image">
+          <img src="${animal.image}" alt="${animal.name}">
+        </div>
+      `;
+
+      wrapper.appendChild(slide);
+    });
+  }
+
+  function updateThumbnails() {
+    const container = document.getElementById("thumbnails");
+    container.innerHTML = "";
+
+    // Create the info block
+    const infoDiv = document.createElement("div");
+    infoDiv.classList.add("info");
+    infoDiv.innerHTML = `
+      <h3>${animals[currentIndex].name}</h3>
+      <p>${animals[currentIndex].description}</p>
+      <button class="learn-more">LEARN MORE</button>
+    `;
+    container.appendChild(infoDiv);
+
+    // Add thumbnails (excluding the current one)
+    const positions = ["t0", "t1", "t2", "t3"];
+    let thumbnails = [];
+
+    for (let i = 1; i < animals.length; i++) {
+      const index = (currentIndex + i) % animals.length;
+      thumbnails.push({ ...animals[index], index });
+    }
+
+    thumbnails.forEach((animal, i) => {
+      const thumb = document.createElement("img");
+      thumb.src = animal.image;
+      thumb.alt = animal.name;
+      thumb.className = `thumbnail ${positions[i]}`;
+      thumb.onclick = () => changeSlide((animal.index - currentIndex + animals.length) % animals.length);
+      container.appendChild(thumb);
+    });
+  }
+
+  function changeSlide(direction) {
+    const slides = document.querySelectorAll(".slidefav");
+    const oldSlide = slides[currentIndex];
+    oldSlide.classList.remove("active");
+    
+    if (direction === -1) {
+      oldSlide.classList.add("out-right");
+    } else {
+      oldSlide.classList.add("out-left");
+    }
+
+    currentIndex = (currentIndex + direction + animals.length) % animals.length;
+
+    const newSlide = slides[currentIndex];
+    newSlide.classList.add("active");
+
+    setTimeout(() => {
+      oldSlide.classList.remove("out-left", "out-right");
+      updateThumbnails();
+    }, 500);
+  }
+
+  window.onload = () => {
+    createSlides();
+    updateThumbnails();
+  };
+
+// Carousel logic
+let cards = document.querySelectorAll('.storycard');
+
+function nextCard() {
+  document.querySelector('.carouselhead').appendChild(cards[0]);
+  cards = document.querySelectorAll('.storycard');
+  updateClasses();
+}
+
+function prevCard() {
+  document.querySelector('.carouselhead').prepend(cards[cards.length - 1]);
+  cards = document.querySelectorAll('.storycard');
+  updateClasses();
+}
+
+function updateClasses() {
+  cards.forEach((card, i) => {
+    card.classList.remove('center', 'side');
+    if (i === 1) card.classList.add('center');
+    else card.classList.add('side');
+  });
+}
+
+// Pie Chart
+const ctx = document.getElementById('pieChart').getContext('2d');
+
+new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ['Animal Species', 'Endemic Animals', 'Critically Endangered'],
+    datasets: [{
+      data: [56177, 26088, 2000],
+      backgroundColor: ['#B93B3D', '#588DEE', '#F8FD6E']
+    }]
+  },
+  options: {
+    layout: {
+      padding: {
+        top: 60  // push the whole chart down by 60 pixels
+      }
+    },
+    plugins: {
+      legend: {
+        position: 'top',
+        labels: {
+          color: '#000',
+          font: {
+            size: 14
+          },
+          padding: 20 // space between legend items
+        }
+      },
+      datalabels: {
+        color: '#000',
+        textStrokeColor: '#fff',   // white stroke color
+        textStrokeWidth: 3,        // stroke width in pixels
+        formatter: (value, context) => {
+          const data = context.chart.data.datasets[0].data;
+          const total = data.reduce((sum, val) => sum + val, 0);
+          const percentage = ((value / total) * 100).toFixed(1) + '%';
+          return `${value} (${percentage})`;
+        },
+        font: {
+          weight: 'bold',
+          size: 12
+        },
+        anchor: 'end',
+        align: 'end',
+        offset: -20,
+        clamp: false,
+        clip: false
+      }
+    }
+  },
+  plugins: [ChartDataLabels]
+});
+
+</script>
+
+</body>
+</html>
